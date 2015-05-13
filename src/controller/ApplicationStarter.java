@@ -1,11 +1,16 @@
 package controller;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import graphique.GraphicPlanning;
+import graphique.listener.ExitScreenListener;
+import graphique.listener.GeneratePlanningListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.swing.JFrame;
 
 import util.JXMLHandler;
 import container.Formation;
@@ -15,11 +20,29 @@ import container.Seance;
 
 public class ApplicationStarter {
 
+	public static void main(String[] args) throws IOException {
+		JFrame frame = new JFrame();
+		frame.setSize(1150, 480);
+		GraphicPlanning panel = new GraphicPlanning();
+		panel.getComboBox1().addItem("2014");
+		panel.getComboBox1().addItem("2015");
+		panel.getComboBox1().addItem("2016");
+		panel.getComboBox1().addItem("2017");
+		panel.getComboBox1().addItem("2018");
+		panel.getComboBox1().addItem("2019");
+		panel.getComboBox1().addItem("2020");
+		panel.getComboBox1().addItem("2021");
+		panel.getComboBox1().addItemListener(new GeneratePlanningListener(panel));
+		panel.getButton5().addActionListener(new ExitScreenListener(frame));
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+
 	/**
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void _main(String[] args) throws IOException {
 		Date now = new Date();
 		List<Planning> plannings = PlanningGenerator.getWholeYear(now, EMPTY);
 		System.out.println(plannings);
