@@ -1,0 +1,4 @@
+/*C2*/SET SCHEMA PUBLIC
+create table MODULE (\u000d\u000aid int not null identity,\u000d\u000aabbreviation VARCHAR(50) NULL,\u000d\u000acolor VARCHAR(15) NULL,\u000d\u000anbSeance INT NULL)\u000d\u000a
+INSERT INTO MODULE VALUES(1,'SS','FF0000',16)
+COMMIT

@@ -17,7 +17,6 @@ import  common.IDelimitable;
  * of a String tuple.
  * 
  * @see IDelimitable
- * @author jliu
  * 
  */
 public final class CSVFileHandler {

@@ -18,8 +18,8 @@ public class Formateur extends DbObject {
 	}
 
 	@XmlElement
-	public static  void setTitre(String titre) {
-		//this.titre = titre;
+	public  void setTitre(String titre) {
+		this.titre = titre;
 	}
 
 	public String getNom() {
@@ -27,8 +27,8 @@ public class Formateur extends DbObject {
 	}
 
 	@XmlElement
-	public static void setNom(String nom) {
-		//this.nom = nom;
+	public  void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	public String getPrenom() {
@@ -36,8 +36,8 @@ public class Formateur extends DbObject {
 	}
 
 	@XmlElement
-	public static void setPrenom(String prenom) {
-		//this.prenom = prenom;
+	public  void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 	public String getEmail() {
@@ -49,4 +49,10 @@ public class Formateur extends DbObject {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "Formateur [titre=" + titre + ", nom=" + nom + ", prenom="
+				+ prenom + ", email=" + email + "]";
+	}
+	
 }

@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Seance {
-
+    
 	private Module module;
 	private Formateur formateur;
 	private int duree;
@@ -36,5 +36,6 @@ public class Seance {
 	public void setFormateur(Formateur formateur) {
 		this.formateur = formateur;
 	}
-
+  
 }
+

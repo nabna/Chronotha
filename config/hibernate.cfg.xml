@@ -17,6 +17,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
 
 		<!-- List of XML mapping files -->
 		<mapping resource="Module.hbm.xml"/>
+		<mapping resource="Formateur.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
