@@ -7,9 +7,6 @@ package graphique;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
-/**
- * @author Nabaouia
- */
 public class GraphicPlanning extends JPanel {
 	public GraphicPlanning() {
 		initComponents();

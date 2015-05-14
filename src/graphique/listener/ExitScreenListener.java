@@ -15,7 +15,7 @@ public class ExitScreenListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent a) {
-		frame.hide();
+		frame.setVisible(false);
 	}
 
 }

@@ -1,0 +1,68 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_40" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:37:p, par l {par l:::p {seq l {comp buttonSauvegarder:::p::p, space u:::p, comp buttonAnnuler:::p::p, space :::x, comp buttonQuitter:::p::p}, seq l {par l:::p {comp label1::l:::x, comp label4::l:::x, comp label3::l:::x, comp label2::l:::x, comp label5::l:p:100:p}, space :::p, par l:::p {comp comboBoxRecherche:::::x, comp textPrenom:::::x, comp textNom:::::x, comp textTitre:::::x, comp textEmail:::p:268:p}}}, comp label6:::p:317:p}, space ::61:x}}"
+			"$verticalGroup": "par l {seq t {space :p:30:p, comp label6:::p::p, space ::34:x, par b {comp comboBoxRecherche::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp label1::b:p::p, comp textNom::b:p::p}, space :p:23:p, par l {comp textPrenom:::p::p, comp label2:::p::p}, space s:::p, par l {comp textTitre:::p::p, comp label3:::p::p}, par l {seq l {space s:::p, comp textEmail:::p::p}, seq l {space :p:21:p, comp label4:::p::p}}, space :p:58:p, par b {comp buttonSauvegarder::b:p::p, comp buttonAnnuler::b:p::p, comp buttonQuitter::b:p::p}, space :p:28:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Nom"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Prénom"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Titre"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Email"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textNom"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textPrenom"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textTitre"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textEmail"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonSauvegarder"
+				"text": "Sauvegarder"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonQuitter"
+				"text": "Quitter"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonAnnuler"
+				"text": "Annuler"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBoxRecherche"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Recherche"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Gestionnaire de formateur"
+				"font": new java.awt.Font( "Tahoma", 1, 20 )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 15, 5 )
+			"size": new java.awt.Dimension( 470, 375 )
+		} )
+	}
+}

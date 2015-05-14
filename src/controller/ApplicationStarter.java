@@ -1,9 +1,17 @@
 package controller;
 
 import static org.apache.commons.lang3.StringUtils.EMPTY;
+import graphique.GraphicFormateur;
+import graphique.GraphicModule;
 import graphique.GraphicPlanning;
 import graphique.listener.ExitScreenListener;
-import graphique.listener.GeneratePlanningListener;
+import graphique.listener.formateur.AnnulerFormateurListener;
+import graphique.listener.formateur.LoadFormateurListener;
+import graphique.listener.formateur.SaveFormateurListener;
+import graphique.listener.module.AnnulerModuleListener;
+import graphique.listener.module.LoadModuleListener;
+import graphique.listener.module.SaveModuleListener;
+import graphique.listener.planning.GeneratePlanningListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,17 +20,57 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
+import common.IDbObject;
 import util.JXMLHandler;
+import connector.SimpleDbConnector;
+import container.Formateur;
 import container.Formation;
 import container.Module;
 import container.Planning;
 import container.Seance;
 
 public class ApplicationStarter {
-
+	
 	public static void main(String[] args) throws IOException {
+		
+	}
+	
+	public static void main_(String[] args) throws IOException {
 		JFrame frame = new JFrame();
-		frame.setSize(1150, 480);
+		frame.setSize(900, 710);
+		GraphicModule panel = new GraphicModule();
+
+		SaveModuleListener saveModuleListener = new SaveModuleListener(panel);
+		saveModuleListener.refreshList();
+		
+		panel.getComboBoxRecherche().addItemListener(new LoadModuleListener(panel));
+		panel.getButtonSauvegarder().addActionListener(saveModuleListener);
+		panel.getButtonAnnuler().addActionListener(new AnnulerModuleListener(panel));
+		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));
+		
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+	
+	public static void mainFormateur(String[] args) throws IOException {
+		JFrame frame = new JFrame();
+		frame.setSize(500, 480);
+		GraphicFormateur panel = new GraphicFormateur();
+
+		SaveFormateurListener saveFormateurListener = new SaveFormateurListener(panel);
+		saveFormateurListener.refreshList();
+		
+		panel.getComboBoxRecherche().addItemListener(new LoadFormateurListener(panel));
+		panel.getButtonSauvegarder().addActionListener(saveFormateurListener);
+		panel.getButtonAnnuler().addActionListener(new AnnulerFormateurListener(panel));
+		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));
+		frame.add(panel);
+		frame.setVisible(true);
+	}
+
+	public static void mainPlanning(String[] args) throws IOException {
+		JFrame frame = new JFrame();
+		frame.setSize(1050, 480);
 		GraphicPlanning panel = new GraphicPlanning();
 		panel.getComboBox1().addItem("2014");
 		panel.getComboBox1().addItem("2015");
@@ -51,6 +99,9 @@ public class ApplicationStarter {
 		plannings = PlanningGenerator.getHolidays(now, EMPTY);
 		System.out.println(plannings);
 
+		System.out.println("Click this zone here and press Enter...");
+		System.in.read();
+
 		Formation formation = new Formation();
 		formation.setYear(now);
 		formation.addWorkingDays(PlanningGenerator.getWorkingDays(now, "AM"));
@@ -61,17 +112,21 @@ public class ApplicationStarter {
 		JXMLHandler<Formation> fHandler = new JXMLHandler<Formation>(
 				Formation.class);
 		String xml = fHandler.toXML(formation);
+
 		System.out.println(xml);
 
-		// Un autre exemple
+		System.out.println("Click this zone here again and press Enter...");
+		System.in.read();
+
+		// Another example with a single day and populated modules
 		formation = new Formation();
 		formation.setYear(now);
 		plannings = new ArrayList<Planning>();
 		Planning planning = new Planning(now, EMPTY);
 		Seance seance = new Seance();
 		Module module = new Module();
-		module.setAbbreviation("SI");
-		module.setName("Systeme informatique");
+		module.setAbbreviation("ECP");
+		module.setName("Electro-magnetisme et Champs de Propagation");
 		module.setColor("FF089C");
 		module.setNbSeance(14);
 		seance.setModule(module);
@@ -82,7 +137,10 @@ public class ApplicationStarter {
 
 		System.out.println(fHandler.toXML(formation));
 
-		System.out.println("Il faut ecrire un transformeur XSLT, pour exporter XML en HTML");
+		// You can then write an XSLT, to transform the generated XML to HTML
+		// for export
+		System.out
+				.println("You can then write an XSLT, to transform the generated XML to HTML for export");
 	}
 
 }
