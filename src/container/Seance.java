@@ -3,12 +3,15 @@ package container;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import common.DbObject;
+
 @XmlRootElement
-public class Seance {
+public class Seance extends DbObject {
     
 	private Module module;
 	private Formateur formateur;
 	private int duree;
+	private int rang;
 
 	public Module getModule() {
 		return module;
@@ -28,6 +31,15 @@ public class Seance {
 		this.duree = duree;
 	}
 
+	public int getRang() {
+		return rang;
+	}
+
+	@XmlElement
+	public void setRang(int rang) {
+		this.rang = rang;
+	}
+
 	public Formateur getFormateur() {
 		return formateur;
 	}
@@ -36,6 +48,7 @@ public class Seance {
 	public void setFormateur(Formateur formateur) {
 		this.formateur = formateur;
 	}
-  
+
+
 }
 

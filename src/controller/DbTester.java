@@ -3,11 +3,11 @@ package controller;
 import java.util.List;
 
 import common.IDbObject;
-
 import connector.SimpleDbConnector;
 //import connector.SimpleDbConnector;
 import container.Formateur;
 import container.Module;
+import container.Seance;
 
 public class DbTester {
 
@@ -60,8 +60,30 @@ public class DbTester {
 //	    System.out.println(formateur1.getNom());
 //	    System.out.println(formateur1.getPrenom());
 		
-		List<IDbObject> formateurs = SimpleDbConnector.getAll(Formateur.class);
-		System.out.println(formateurs);
+//		List<IDbObject> formateurs = SimpleDbConnector.getAll(Formateur.class);
+//		System.out.println(formateurs);
+		
+		
+//		Module module = (Module)SimpleDbConnector.get(Module.class, 0);
+		
+//		Formateur formateur = new Formateur();
+//		// premiere insertion id = 0
+//		formateur.setTitre("BDD");
+//		formateur.setNom("VUONG");
+//		formateur.setPrenom("Vincent");
+//		formateur.setEmail("vincentvuong@yahoo.fr");
+		
+//		Formateur formateur = (Formateur)SimpleDbConnector.get(Formateur.class, 20);
+//		
+//		Seance seance = new Seance();
+//		seance.setDuree(10);
+//		seance.setFormateur(formateur);
+//		seance.setModule(module);
+//		
+//		SimpleDbConnector.save(seance);
+		
+		Seance seance = (Seance)SimpleDbConnector.get(Seance.class, 1);
+		System.out.println(seance);
 	}
 	
 
