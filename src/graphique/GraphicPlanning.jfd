@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:36:p, par t {seq {comp label1:::p:84:p, space :::p, comp comboBox1:::p:168:p, space :p:39:p, comp button2:::p::p, space ::59:x, comp button3:::p:132:p, space :p:102:p, comp button4:::p::p, space :p:110:p, comp button5:::p::p}, comp scrollPane1:::::x}, space :p:145:p}}"
-			"$verticalGroup": "par l {seq l {space :p:27:p, comp scrollPane1::::419:x, space :p:18:p, par b {comp button5::b:p::p, comp button4::b:p::p, comp button3::b:p::p, comp label1::b:p::p, comp comboBox1::b:p::p, comp button2::b:p::p}, space :p:48:p}}"
+			"$horizontalGroup": "par l {seq l {space :p:36:p, par t {seq {comp label1:::p:84:p, space :::p, comp comboBoxYear:::p:168:p, space :p:39:p, comp buttonCreerSeance:::p::p, space ::59:x, comp buttonExporter:::p:132:p, space :p:102:p, comp buttonSave:::p::p, space :p:110:p, comp buttonQuitter:::p::p}, comp scrollPane1:::::x}, space :p:145:p}}"
+			"$verticalGroup": "par l {seq l {space :p:27:p, comp scrollPane1::::419:x, space :p:18:p, par b {comp buttonQuitter::b:p::p, comp buttonSave::b:p::p, comp buttonExporter::b:p::p, comp label1::b:p::p, comp comboBoxYear::b:p::p, comp buttonCreerSeance::b:p::p}, space :p:48:p}}"
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -15,23 +15,23 @@ new FormModel {
 				} )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
+				name: "buttonCreerSeance"
 				"text": "Créer une séance"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button3"
+				name: "buttonExporter"
 				"text": "Exportation"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button4"
+				name: "buttonSave"
 				"text": "Saugarder"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button5"
+				name: "buttonQuitter"
 				"text": "Quitter l'écran"
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox1"
+				name: "comboBoxYear"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"

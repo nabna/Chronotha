@@ -4,6 +4,7 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import graphique.GraphicFormateur;
 import graphique.GraphicModule;
 import graphique.GraphicPlanning;
+import graphique.GraphicSeance;
 import graphique.listener.ExitScreenListener;
 import graphique.listener.formateur.AnnulerFormateurListener;
 import graphique.listener.formateur.LoadFormateurListener;
@@ -11,7 +12,11 @@ import graphique.listener.formateur.SaveFormateurListener;
 import graphique.listener.module.AnnulerModuleListener;
 import graphique.listener.module.LoadModuleListener;
 import graphique.listener.module.SaveModuleListener;
+import graphique.listener.planning.CreateSeanceListener;
 import graphique.listener.planning.GeneratePlanningListener;
+import graphique.listener.seance.LoadSeanceFormateurListener;
+import graphique.listener.seance.LoadSeanceModuleListener;
+import graphique.listener.seance.SaveSeanceListener;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,10 +25,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import common.IDbObject;
 import util.JXMLHandler;
-import connector.SimpleDbConnector;
-import container.Formateur;
 import container.Formation;
 import container.Module;
 import container.Planning;
@@ -31,11 +33,41 @@ import container.Seance;
 
 public class ApplicationStarter {
 	
+	private static final int startYear = 2014;
+
 	public static void main(String[] args) throws IOException {
+		JFrame frame = new JFrame();
+		frame.setSize(1150, 480);
+		GraphicPlanning panel = new GraphicPlanning();
+		for(int i = startYear; i < startYear + 10; i++) {
+			panel.getComboBoxYear().addItem("" + i);
+		}
+		panel.getComboBoxYear().addItemListener(new GeneratePlanningListener(panel));
+		panel.getButtonCreerSeance().addActionListener(new CreateSeanceListener());
+		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));
+		frame.add(panel);
+		frame.setVisible(true);
 		
 	}
+
+	public static void mainSeance(String[] args) throws IOException {
+		JFrame frame = new JFrame();
+		frame.setSize(550, 480);
+		GraphicSeance panel = new GraphicSeance();
+
+		SaveSeanceListener saveModuleListener = new SaveSeanceListener(panel);
+		saveModuleListener.refreshList();
+
+		panel.getButtonSauvegarder().addActionListener(saveModuleListener);
+		panel.getComboBoxFormateur().addItemListener(new LoadSeanceFormateurListener(panel));
+		panel.getComboBoxModule().addItemListener(new LoadSeanceModuleListener(panel));
+		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));
+		
+		frame.add(panel);
+		frame.setVisible(true);
+	}
 	
-	public static void main_(String[] args) throws IOException {
+	public static void mainModule(String[] args) throws IOException {
 		JFrame frame = new JFrame();
 		frame.setSize(900, 710);
 		GraphicModule panel = new GraphicModule();
@@ -72,16 +104,16 @@ public class ApplicationStarter {
 		JFrame frame = new JFrame();
 		frame.setSize(1050, 480);
 		GraphicPlanning panel = new GraphicPlanning();
-		panel.getComboBox1().addItem("2014");
-		panel.getComboBox1().addItem("2015");
-		panel.getComboBox1().addItem("2016");
-		panel.getComboBox1().addItem("2017");
-		panel.getComboBox1().addItem("2018");
-		panel.getComboBox1().addItem("2019");
-		panel.getComboBox1().addItem("2020");
-		panel.getComboBox1().addItem("2021");
-		panel.getComboBox1().addItemListener(new GeneratePlanningListener(panel));
-		panel.getButton5().addActionListener(new ExitScreenListener(frame));
+		panel.getComboBoxYear().addItem("2014");
+		panel.getComboBoxYear().addItem("2015");
+		panel.getComboBoxYear().addItem("2016");
+		panel.getComboBoxYear().addItem("2017");
+		panel.getComboBoxYear().addItem("2018");
+		panel.getComboBoxYear().addItem("2019");
+		panel.getComboBoxYear().addItem("2020");
+		panel.getComboBoxYear().addItem("2021");
+		panel.getComboBoxYear().addItemListener(new GeneratePlanningListener(panel));
+		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));
 		frame.add(panel);
 		frame.setVisible(true);
 	}

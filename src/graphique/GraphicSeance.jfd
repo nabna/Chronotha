@@ -1,0 +1,60 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_40" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:37:p, par l {par l:::p {seq l {comp buttonSauvegarder:::p::p, space ::216:x, comp buttonQuitter:::p::p}, seq l {par l:::p {comp label4::l:::x, comp label3::l:::x, seq l {space :p:106:p, comp label2:::::x}, comp label5::l:::x, comp label1::l:p:100:p}, space :::p, par l:::p {comp comboBox1::::268:x, comp comboBoxRecherche:::::x, comp textCouleur:::::x, comp textNbSeance::::268:x}}}, comp label6:::p:317:p}, space ::55:x}}"
+			"$verticalGroup": "par l {seq t {space :p:30:p, comp label6:::p::p, space ::37:x, par b {comp comboBoxRecherche::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp comboBox1::b:p::p, comp label1::b:p::p}, space :p:20:p, comp label2:::p::p, space :p:38:p, par l {comp textCouleur:::p::p, comp label3:::p::p}, par l {seq l {space s:::p, comp textNbSeance:::p::p}, seq l {space :p:21:p, comp label4:::p::p}}, space :p:58:p, par b {comp buttonSauvegarder::b:p::p, comp buttonQuitter::b:p::p}, space :p:28:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Durée"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Rang"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textCouleur"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textNbSeance"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonSauvegarder"
+				"text": "Sauvegarder"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "buttonQuitter"
+				"text": "Quitter"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBoxRecherche"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Module"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Gestionnaire de Séance"
+				"font": new java.awt.Font( "Tahoma", 1, 20 )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBox1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Formateur"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 470, 375 )
+		} )
+	}
+}

@@ -1,6 +1,5 @@
 package graphique.listener.module;
 
-import graphique.GraphicFormateur;
 import graphique.GraphicModule;
 
 import java.awt.Color;
@@ -10,7 +9,6 @@ import java.awt.event.ItemListener;
 import org.apache.commons.lang3.StringUtils;
 
 import connector.SimpleDbConnector;
-import container.Formateur;
 import container.Module;
 
 public class LoadModuleListener implements ItemListener {
