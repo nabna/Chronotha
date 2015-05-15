@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:37:p, par l {par l:::p {seq l {comp buttonSauvegarder:::p::p, space ::216:x, comp buttonQuitter:::p::p}, seq l {par l:::p {comp label4::l:::x, comp label3::l:::x, seq l {space :p:106:p, comp label2:::::x}, comp label5::l:::x, comp label1::l:p:100:p}, space :::p, par l:::p {comp comboBox1::::268:x, comp comboBoxRecherche:::::x, comp textCouleur:::::x, comp textNbSeance::::268:x}}}, comp label6:::p:317:p}, space ::55:x}}"
-			"$verticalGroup": "par l {seq t {space :p:30:p, comp label6:::p::p, space ::37:x, par b {comp comboBoxRecherche::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp comboBox1::b:p::p, comp label1::b:p::p}, space :p:20:p, comp label2:::p::p, space :p:38:p, par l {comp textCouleur:::p::p, comp label3:::p::p}, par l {seq l {space s:::p, comp textNbSeance:::p::p}, seq l {space :p:21:p, comp label4:::p::p}}, space :p:58:p, par b {comp buttonSauvegarder::b:p::p, comp buttonQuitter::b:p::p}, space :p:28:p}}"
+			"$horizontalGroup": "par l {seq l {space :p:37:p, par l:::p {seq l {comp buttonSauvegarder:::p::p, space :::x, comp buttonQuitter:::p::p}, seq l {par l {seq l {comp label7:::::x, space :::p, comp label2:::::x}, comp label5::l:::x, seq l {comp label1:::p:100:p, space :0:0:x}}, space :::p, par l:::p {comp comboBoxFormateur::::268:x, comp comboBoxModule:::::x, comp comboBoxPlanning::l::268:x}}, seq t {par t {comp label8:::p:112:p, comp label3:::p:112:p, comp label4::t:p:112:p}, space :::p, par l {comp textDebut:::p:268:p, comp textDuree:::p:268:p, comp textRang:::p:268:p}}, comp label6::l:p:317:p}, space ::49:x}}"
+			"$verticalGroup": "par l {seq t {space :::x, comp label6:::p::p, space s:::p, par b {comp comboBoxModule::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp comboBoxFormateur::b:p::p, comp label1::b:p::p}, space :20:20:p, par l {comp comboBoxPlanning:::p::p, comp label7:::p::p}, space :::p, comp label2:::p::p, space :p:29:p, par b {comp label8::b:p::p, comp textDebut::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp textDuree::b:p::p}, space :p:14:p, par b {comp textRang::b:p::p, comp label4::b:p::p}, space s:::p, par b {comp buttonSauvegarder::b:p::p, comp buttonQuitter::b:p::p}, space :p:50:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -20,10 +20,10 @@ new FormModel {
 				"text": "Rang"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textCouleur"
+				name: "textDuree"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textNbSeance"
+				name: "textRang"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonSauvegarder"
@@ -34,7 +34,7 @@ new FormModel {
 				"text": "Quitter"
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBoxRecherche"
+				name: "comboBoxModule"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
@@ -46,15 +46,29 @@ new FormModel {
 				"font": new java.awt.Font( "Tahoma", 1, 20 )
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "comboBox1"
+				name: "comboBoxFormateur"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "Formateur"
 			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Planning"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBoxPlanning"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Début"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textDebut"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 470, 375 )
+			"size": new java.awt.Dimension( 470, 355 )
 		} )
 	}
 }

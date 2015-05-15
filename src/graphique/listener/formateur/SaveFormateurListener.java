@@ -5,6 +5,8 @@ import graphique.GraphicFormateur;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import connector.SimpleDbConnector;
 import container.Formateur;
 
@@ -29,6 +31,7 @@ public class SaveFormateurListener extends BaseFormateurListener implements Acti
 			SimpleDbConnector.save(formateur);
 		}
 		refreshList();
+		JOptionPane.showMessageDialog(panel, "Le formateur est sauvegardé correctement.");
 	}
 
 }

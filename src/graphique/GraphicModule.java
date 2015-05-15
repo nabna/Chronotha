@@ -59,7 +59,6 @@ public class GraphicModule extends JPanel {
 
 	private void initComponents() {
 		// JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-		// Generated using JFormDesigner Evaluation license - Jixuan LIU
 		label1 = new JLabel();
 		label2 = new JLabel();
 		label3 = new JLabel();
@@ -183,7 +182,6 @@ public class GraphicModule extends JPanel {
 	}
 
 	// JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-	// Generated using JFormDesigner Evaluation license - Jixuan LIU
 	private JLabel label1;
 	private JLabel label2;
 	private JLabel label3;

@@ -14,7 +14,7 @@ import container.Planning;
 
 public class PlanningGenerator {
 	
-	public static List<Planning> getWholeYear(Date now, String id) {
+	public static List<Planning> getWholeYear(Date now) {
 		List<Planning> plannings = new ArrayList<Planning>();
 		
 	    Calendar cal = Calendar.getInstance();
@@ -30,7 +30,7 @@ public class PlanningGenerator {
 	    Date date = cal.getTime();
 	    do {
 	    	date = DateUtil.addSomeDays(date, 1);
-	    	Planning planning  = new Planning(date, id);
+	    	Planning planning  = new Planning(date);
 	    	plannings.add(planning);
 	    } while(date.compareTo(endCal.getTime()) < 0);
 		
@@ -38,7 +38,7 @@ public class PlanningGenerator {
 			
 	}
 	
-	public static List<Planning> getWorkingDays(Date now, String id) {
+	public static List<Planning> getWorkingDays(Date now) {
 		List<Planning> plannings = new ArrayList<Planning>();
 		
 	    Calendar cal = Calendar.getInstance();
@@ -54,7 +54,7 @@ public class PlanningGenerator {
 	    Date date = cal.getTime();
 	    do {
 	    	date = DateUtil.addSomeBusinessDay(date, 1);
-	    	Planning planning  = new Planning(date, id);
+	    	Planning planning  = new Planning(date);
 	    	plannings.add(planning);
 	    } while(date.compareTo(endCal.getTime()) < 0);
 		
@@ -62,10 +62,10 @@ public class PlanningGenerator {
 			
 	}
 	
-	public static List<Planning> getHolidays(Date now, String id) {
-		Set<Planning> symmetricDiff = new HashSet<Planning>(getWholeYear(now, id));
-		symmetricDiff.removeAll(getWorkingDays(now, id));
-		Collections.disjoint(symmetricDiff, getWorkingDays(now, id));
+	public static List<Planning> getHolidays(Date now) {
+		Set<Planning> symmetricDiff = new HashSet<Planning>(getWholeYear(now));
+		symmetricDiff.removeAll(getWorkingDays(now));
+		Collections.disjoint(symmetricDiff, getWorkingDays(now));
 		List<Planning> result = new ArrayList<Planning>(symmetricDiff);
 		Collections.sort(result);
 		return result;

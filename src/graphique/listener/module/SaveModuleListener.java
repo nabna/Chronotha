@@ -1,13 +1,13 @@
 package graphique.listener.module;
 
-import graphique.GraphicFormateur;
 import graphique.GraphicModule;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import connector.SimpleDbConnector;
-import container.Formateur;
 import container.Module;
 
 public class SaveModuleListener extends BaseModuleListener implements ActionListener {
@@ -32,6 +32,7 @@ public class SaveModuleListener extends BaseModuleListener implements ActionList
 			SimpleDbConnector.save(module);
 		}
 		refreshList();
+		JOptionPane.showMessageDialog(panel, "La module est sauvegardée correctement.");
 	}
 
 }
