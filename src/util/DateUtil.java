@@ -70,13 +70,23 @@ public class DateUtil {
 		return df.format(d);
 	}
 
+
 	public static String getYYYYMMDDHHmmss(Date d) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(d);
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return df.format(d);
 	}
+	
+	public static String getYYYYMMDDHHmmss2(Date d) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
 
+		DateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+
+		return df.format(d);
+	}
+	
 	public static String getWithSlash(Date d) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(d);
