@@ -8,6 +8,8 @@ import common.DbObject;
 @XmlRootElement
 public class Formateur extends DbObject {
 
+	private static final long serialVersionUID = 1L;
+	
 	private String titre;
 	private String nom;
 	private String prenom;

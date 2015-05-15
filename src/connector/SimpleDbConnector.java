@@ -3,15 +3,18 @@ package connector;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Criterion;
 
 import common.IDbObject;
 
+@SuppressWarnings("unchecked")
 public class SimpleDbConnector {
 	
 	private static final SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
@@ -48,7 +51,6 @@ public class SimpleDbConnector {
 			session.beginTransaction();
 			session.delete(dbObject);
 			session.getTransaction().commit();
-			
 		} catch (HibernateException e) {
 			log.error(e.getMessage(), e);
 			session.getTransaction().rollback();
@@ -74,7 +76,6 @@ public class SimpleDbConnector {
 		return dbObject;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public static List<IDbObject> getAll(Class<?> clazz) {
 		Session session = sessionFactory.getCurrentSession();
 		List<IDbObject> list = null;
@@ -92,4 +93,23 @@ public class SimpleDbConnector {
 		return list;
 	}
 	
+	public static List<IDbObject> find(Class<?> clazz, final Criterion... criterion) {
+		Session session = sessionFactory.getCurrentSession();
+		List<IDbObject> l = null;
+		try {
+			if(session == null) {
+		        session = sessionFactory.openSession();
+			}
+			session.beginTransaction();
+			Criteria crit = session.createCriteria(clazz);
+			for (Criterion c : criterion) {
+				crit.add(c);
+			}
+			l = crit.list();
+			session.getTransaction().commit();
+		} catch (HibernateException e) {
+			log.error(e.getMessage(), e);
+		} 
+		return l;
+	}
 }

@@ -19,6 +19,7 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
 		<mapping resource="Module.hbm.xml"/>
 		<mapping resource="Formateur.hbm.xml"/>
 		<mapping resource="Seance.hbm.xml"/>
+		<mapping resource="Planning.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

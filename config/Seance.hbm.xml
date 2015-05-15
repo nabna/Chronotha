@@ -11,9 +11,11 @@
       <id name="id" type="int" column="id">
          <generator class="native"/>
       </id>
+      <property name="debut" column="debut" type="int"/>
       <property name="duree" column="duree" type="int"/>
       <property name="rang" column="rang" type="int"/>
-      <many-to-one name="module" class="container.Module" column="ID_MODULE" not-null="true" cascade="all" lazy="false"/>
-      <many-to-one name="formateur" class="container.Formateur" column="ID_FORMATEUR" not-null="true" cascade="all" lazy="false" />
+      <many-to-one name="module" class="container.Module" column="ID_MODULE" not-null="true" cascade="save-update" lazy="false"/>
+      <many-to-one name="formateur" class="container.Formateur" column="ID_FORMATEUR" not-null="true" cascade="save-update" lazy="false" />
+      <many-to-one name="planning" class="container.Planning" column="ID_PLANNING" not-null="true" cascade="save-update" lazy="false" />
    </class>
 </hibernate-mapping>

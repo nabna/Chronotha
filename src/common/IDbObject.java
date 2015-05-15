@@ -2,6 +2,6 @@ package common;
 
 public interface IDbObject {
 
-	public abstract int getId();
+	public abstract Integer getId();
 
 }

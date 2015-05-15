@@ -4,15 +4,20 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.StatelessSession;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.Transaction;
+
+import common.IDbObject;
 
 /**
  * Note sur les suppression de warnings "unused" pour les Exception. Comme l'interface est
@@ -27,6 +32,10 @@ import org.hibernate.Transaction;
  */
 public abstract class BaseDao<T, ID extends Serializable> implements GenericDao<T, ID> {
 
+	private static final SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+	private static final Logger log = Logger.getLogger(SimpleDbConnector.class);
+	
 	private Class<T> persistentClass;
 
 	@SuppressWarnings("unchecked")
@@ -38,20 +47,22 @@ public abstract class BaseDao<T, ID extends Serializable> implements GenericDao<
 	@SuppressWarnings("unchecked")
 	protected List<T> findByCriteria(final Criterion... criterion)
 			throws Exception {
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		StatelessSession session = sessionFactory.openStatelessSession();
+		Session session = sessionFactory.getCurrentSession();
 		List<T> l = null;
 		try {
+			if(session == null) {
+		        session = sessionFactory.openSession();
+			}
+			session.beginTransaction();
 			Criteria crit = session.createCriteria(persistentClass);
 			for (Criterion c : criterion) {
 				crit.add(c);
 			}
 			l = crit.list();
+			session.getTransaction().commit();
 		} catch (HibernateException e) {
-			throw new Exception(e);
-		} finally {
-			// session.close();
-		}
+			log.error(e.getMessage(), e);
+		} 
 		return l;
 	}
 

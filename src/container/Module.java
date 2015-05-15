@@ -9,6 +9,8 @@ import common.DbObject;
 @XmlRootElement
 public class Module extends DbObject{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
 	private String abbreviation;
 	private String color;

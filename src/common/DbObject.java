@@ -1,15 +1,19 @@
 package common;
 
-public class DbObject implements IDbObject {
+import java.io.Serializable;
+
+public class DbObject implements IDbObject, Serializable {
 	
-	protected int id;
+	private static final long serialVersionUID = 1L;
+	
+	protected Integer id;
 
 	@Override
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	

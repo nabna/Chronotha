@@ -7,18 +7,23 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import common.DbObject;
+
 import util.DateUtil;
 
 @XmlRootElement
-public class Planning implements Comparable<Planning>{
+public class Planning extends DbObject implements Comparable<Planning> {
 
-	private String identity;
+	private static final long serialVersionUID = 1L;
+	
 	private Date date;
-	private List<Seance> seance = new ArrayList<Seance>();
+	@XmlElement
+	private String formattedDate; // Date formatteé
+	private int availability; // Représentation binaire de la disponibilité, i.e. 1111001110
+	private List<Seance> seances = new ArrayList<Seance>();
 
-	public Planning(Date date, String id) {
+	public Planning(Date date) {
 		this.date = date;
-		this.identity = DateUtil.getFormattedDate(date) + " " + id;
 	}
 
 	public Planning() {
@@ -28,38 +33,48 @@ public class Planning implements Comparable<Planning>{
 		return date;
 	}
 	
-	public List<Seance> getSeance() {
-		return seance;
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public List<Seance> getSeances() {
+		return seances;
 	}
 	
-	public String getIdentity() {
-		return identity;
-	}
-
 	@XmlElement
-	public void setIdentity(String identity) {
-		this.identity = identity;
-	}
-
-	@XmlElement
-	public void setSeance(List<Seance> seance) {
-		this.seance = seance;
+	public void setSeances(List<Seance> seances) {
+		this.seances = seances;
 	}
 	
 	public void addSeance(Seance seance) {
-		this.seance.add(seance);
+		this.seances.add(seance);
+	}
+
+	public int getAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(int availability) {
+		this.availability = availability;
 	}
 
 	@Override
 	public String toString() {
-		return "Planning [date=" + identity + ", seance=" + seance + "]";
+		return "Planning [date=" + getFormattedDate()  + ", seances=" + seances + "]";
+	}
+
+	public String getFormattedDate() {
+		if(formattedDate == null) {
+			formattedDate = DateUtil.getFormattedDate(date);
+		}
+		return formattedDate;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((identity == null) ? 0 : identity.hashCode());
+		result = prime * result + ((getFormattedDate() == null) ? 0 : getFormattedDate().hashCode());
 		return result;
 	}
 
@@ -72,10 +87,10 @@ public class Planning implements Comparable<Planning>{
 		if (getClass() != obj.getClass())
 			return false;
 		Planning other = (Planning) obj;
-		if (identity == null) {
+		if (getFormattedDate() == null) {
 			if (DateUtil.getFormattedDate(other.date) != null)
 				return false;
-		} else if (!identity.equals(DateUtil.getFormattedDate(other.date)))
+		} else if (!getFormattedDate().equals(DateUtil.getFormattedDate(other.date)))
 			return false;
 		return true;
 	}
