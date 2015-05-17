@@ -2,6 +2,8 @@ package graphique.listener.planning;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
 
 public class TimeSlotHelper {
 
@@ -38,6 +40,15 @@ public class TimeSlotHelper {
 			mask = mask << 1;
 		}
 		return map;
+	}
+	
+	public static Integer getKeyBySlot(String value) {
+	    for (Entry<Integer, String> entry : columns.entrySet()) {
+	        if (Objects.equals(value, entry.getValue())) {
+	            return entry.getKey();
+	        }
+	    }
+	    return null;
 	}
 	
 	public static void main(String[] args) {

@@ -25,6 +25,10 @@ public class CreateSeanceListener implements ActionListener {
 		JFrame frame = new JFrame();
 		frame.setSize(550, 480);
 		GraphicSeance panel = new GraphicSeance();
+		
+		for(int i = 0; i < TimeSlotHelper.getTotalSlotsCount(); i++) {
+			panel.getComboBoxDebut().addItem(TimeSlotHelper.getSlotLabel(i));
+		}
 
 		SaveSeanceListener saveModuleListener = new SaveSeanceListener(panel, generatePlanningListener);
 		saveModuleListener.refreshList();

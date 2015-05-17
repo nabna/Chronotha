@@ -4,6 +4,7 @@ import static org.apache.commons.lang3.StringUtils.EMPTY;
 import graphique.GraphicFormateur;
 import graphique.GraphicModule;
 import graphique.GraphicPlanning;
+import graphique.MainFrame;
 import graphique.listener.ExitScreenListener;
 import graphique.listener.formateur.AnnulerFormateurListener;
 import graphique.listener.formateur.LoadFormateurListener;
@@ -26,8 +27,8 @@ public class ApplicationStarter {
 	private static final int startYear = 2014;
 
 	public static void main(String[] args) throws IOException {
-		JFrame frame = new JFrame();
-		frame.setSize(1150, 480);
+    	MainFrame frame = new MainFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		GraphicPlanning panel = new GraphicPlanning();
 		panel.getComboBoxYear().addItem(EMPTY);
 		for(int i = startYear; i < startYear + 10; i++) {
@@ -35,7 +36,7 @@ public class ApplicationStarter {
 		}
 		GeneratePlanningListener generatePlanningListener = new GeneratePlanningListener(panel);
 		panel.getComboBoxYear().addItemListener(generatePlanningListener);
-		panel.getButtonCreerSeance().addActionListener(new CreateSeanceListener(generatePlanningListener));
+		frame.getCreateSeanceAction().addActionListener(new CreateSeanceListener(generatePlanningListener));
 		panel.getButtonExporter().addActionListener(new ExportSeanceListener(panel));
 		panel.getButtonSave().addActionListener(new SavePlanningListener(panel));
 		panel.getButtonQuitter().addActionListener(new ExitScreenListener(frame));

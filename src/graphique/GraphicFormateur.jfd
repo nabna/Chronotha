@@ -14,7 +14,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "Prénom"
+				"text": "Prenom"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"

@@ -45,7 +45,7 @@ public class ExportSeanceListener implements ActionListener {
 			
 			String fileName = "export" + DateUtil.getYYYYMMDDHHmmss2(new Date());
 			handler.toXML(formation, DATA_OUT_DIRECTORY + fileName + ".xml");
-			JOptionPane.showMessageDialog(panel, "Le planning est exporté dans " + DATA_OUT_DIRECTORY + fileName + ".xml");
+			JOptionPane.showMessageDialog(panel, "Le planning est exporte dans " + DATA_OUT_DIRECTORY + fileName + ".xml");
 		}
 	}
 

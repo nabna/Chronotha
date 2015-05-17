@@ -18,8 +18,8 @@ public class Planning extends DbObject implements Comparable<Planning> {
 	
 	private Date date;
 	@XmlElement
-	private String formattedDate; // Date formatteé
-	private int availability; // Représentation binaire de la disponibilité, i.e. 1111001110
+	private String formattedDate; // Date formattee
+	private int availability; // Representation binaire de la disponibilite, i.e. 1111001110
 	private List<Seance> seances = new ArrayList<Seance>();
 
 	public Planning(Date date) {

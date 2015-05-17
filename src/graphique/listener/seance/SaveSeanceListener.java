@@ -56,7 +56,7 @@ public class SaveSeanceListener implements ActionListener {
 		Formateur formateur = (Formateur) SimpleDbConnector.get(Formateur.class, panel.getIdFormateurSelected());
 		Module module = (Module)SimpleDbConnector.get(Module.class, panel.getIdModuleSelected());
 		Planning planning = (Planning)SimpleDbConnector.get(Planning.class, panel.getIdPlanningSelected());
-		int debut = Integer.valueOf(panel.getTextDebut().getText());
+		int debut = Integer.valueOf(1 + panel.getComboBoxDebut().getSelectedIndex());
 		int duree = Integer.valueOf(panel.getTextDuree().getText());
 		int rang = Integer.valueOf(panel.getTextRang().getText());
 		
@@ -69,7 +69,7 @@ public class SaveSeanceListener implements ActionListener {
 		seance.setPlanning(planning);
 		SimpleDbConnector.save(seance);
 
-		JOptionPane.showMessageDialog(panel, "La séance est correctement sauvegardée.");
+		JOptionPane.showMessageDialog(panel, "La seance est correctement sauvegardee.");
 		generatePlanningListener.refresh();
 	}
 

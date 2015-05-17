@@ -24,14 +24,14 @@ public class SaveFormateurListener extends BaseFormateurListener implements Acti
 		formateur.setTitre(panel.getTextTitre().getText());
 		formateur.setEmail(panel.getTextTitre().getText());
 		
-		if(panel.getIdFormateurSelected() != null) { // si le formateur existe, on le met à jour
+		if(panel.getIdFormateurSelected() != null) { // si le formateur existe, on le met a jour
 			formateur.setId(panel.getIdFormateurSelected());
 			SimpleDbConnector.update(formateur);
-		} else { // sinon, on le crée
+		} else { // sinon, on le cree
 			SimpleDbConnector.save(formateur);
 		}
 		refreshList();
-		JOptionPane.showMessageDialog(panel, "Le formateur est sauvegardé correctement.");
+		JOptionPane.showMessageDialog(panel, "Le formateur est sauvegarde correctement.");
 	}
 
 }

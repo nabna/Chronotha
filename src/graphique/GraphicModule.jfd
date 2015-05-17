@@ -14,7 +14,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "Abbréviation"
+				"text": "Abbreviation"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
@@ -22,7 +22,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
-				"text": "Nombre de séance"
+				"text": "Nombre de seance"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textNom"

@@ -25,14 +25,14 @@ public class SaveModuleListener extends BaseModuleListener implements ActionList
 		
 		module.setNbSeance(Integer.valueOf(panel.getTextNbSeance().getText()));
 		
-		if(panel.getIdModuleSelected() != null) { // si le formateur existe, on le met à jour
+		if(panel.getIdModuleSelected() != null) { // si le formateur existe, on le met a jour
 			module.setId(panel.getIdModuleSelected());
 			SimpleDbConnector.update(module);
-		} else { // sinon, on le crée
+		} else { // sinon, on le cree
 			SimpleDbConnector.save(module);
 		}
 		refreshList();
-		JOptionPane.showMessageDialog(panel, "La module est sauvegardée correctement.");
+		JOptionPane.showMessageDialog(panel, "La module est sauvegardee correctement.");
 	}
 
 }

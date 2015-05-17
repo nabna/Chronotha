@@ -31,7 +31,7 @@ public class SavePlanningListener implements ActionListener {
 				}
 			}
 		}
-		JOptionPane.showMessageDialog(panel, "Le planning est sauvegardé correctement.");
+		JOptionPane.showMessageDialog(panel, "Le planning est sauvegarde correctement.");
 	}
 
 }

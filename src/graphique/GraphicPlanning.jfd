@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {par t {seq {space :p:27:p, comp label1:::p:128:p, space :::p, comp comboBoxYear:::p:164:p, space u:::p, comp buttonCreerSeance:::p::p, space :::p, comp buttonExporter:::p:116:p, space :::p, comp buttonSave:::p:116:p, space ::209:x, comp buttonQuitter:::p:132:p}, seq l {space :p:36:p, par l {comp scrollPane1:::::x, seq {comp label3:::p:291:p, space :0:708:x}}}}, space :p:145:p}}"
-			"$verticalGroup": "par l {seq l {space :p:13:p, comp label3:::p::p, space :::p, comp scrollPane1::::402:x, space :p:18:p, par b {comp comboBoxYear::b:p::p, comp buttonCreerSeance::b:p::p, comp label1::b:p::p, comp buttonExporter::b:p::p, comp buttonSave::b:p::p, comp buttonQuitter::b:p::p}, space :p:48:p}}"
+			"$horizontalGroup": "par l {seq l {par t {seq {space :p:27:p, comp label1:::p:167:p, space s:::p, comp comboBoxYear:::p:164:p, space :p:80:p, comp buttonExporter:::p:116:p, space :::p, comp buttonSave:::p:116:p, space ::209:x, comp buttonQuitter:::p:132:p}, seq {space :p:36:p, par l {comp scrollPane1:::::x, seq {comp label3:::p:291:p, space :0:708:x}}}}, space :p:145:p}}"
+			"$verticalGroup": "par l {seq l {space :p:13:p, comp label3:::p::p, space :::p, comp scrollPane1::::402:x, space :p:18:p, par b {comp buttonExporter::b:p::p, comp buttonSave::b:p::p, comp buttonQuitter::b:p::p, comp comboBoxYear::b:p::p, comp label1::b:p::p}, space :p:48:p}}"
 		} ) {
 			name: "this"
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -13,10 +13,6 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JTable" ) {
 					name: "table1"
 				} )
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "buttonCreerSeance"
-				"text": "Créer une séance"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonExporter"
@@ -35,7 +31,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "Choisir l'année scolaire"
+				"text": "Choisir l'annee scolaire"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
@@ -59,7 +55,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonCreerSeance2"
-				"text": "Créer une séance"
+				"text": "Creer une seance"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonExporter2"
@@ -78,11 +74,11 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "Choisir l'année scolaire"
+				"text": "Choisir l'annee scolaire"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "buttonSupprimerSeance2"
-				"text": "Supprimer une séance"
+				"text": "Supprimer une seance"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

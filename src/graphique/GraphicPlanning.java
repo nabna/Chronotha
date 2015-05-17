@@ -31,10 +31,6 @@ public class GraphicPlanning extends JPanel {
 		return comboBoxYear;
 	}
 
-	public JButton getButtonCreerSeance() {
-		return buttonCreerSeance;
-	}
-	
 	public JButton getButtonExporter() {
 		return buttonExporter;
 	}
@@ -56,7 +52,6 @@ public class GraphicPlanning extends JPanel {
 		// //GEN-BEGIN:initComponents
 		scrollPane1 = new JScrollPane();
 		table1 = new JTable();
-		buttonCreerSeance = new JButton();
 		buttonExporter = new JButton();
 		buttonSave = new JButton();
 		buttonQuitter = new JButton();
@@ -89,9 +84,6 @@ public class GraphicPlanning extends JPanel {
 			scrollPane1.setViewportView(table1);
 		}
 
-		//---- buttonCreerSeance ----
-		buttonCreerSeance.setText("Cr\u00e9er une s\u00e9ance");
-
 		//---- buttonExporter ----
 		buttonExporter.setText("Exporter");
 
@@ -116,18 +108,16 @@ public class GraphicPlanning extends JPanel {
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 						.addGroup(layout.createSequentialGroup()
 							.addGap(27, 27, 27)
-							.addComponent(label1, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+							.addComponent(label1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
+							.addGap(18, 18, 18)
 							.addComponent(comboBoxYear, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-							.addComponent(buttonCreerSeance)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+							.addGap(80, 80, 80)
 							.addComponent(buttonExporter, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
 							.addComponent(buttonSave, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
 							.addComponent(buttonQuitter, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))
-						.addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+						.addGroup(layout.createSequentialGroup()
 							.addGap(36, 36, 36)
 							.addGroup(layout.createParallelGroup()
 								.addComponent(scrollPane1)
@@ -145,12 +135,11 @@ public class GraphicPlanning extends JPanel {
 					.addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
 					.addGap(18, 18, 18)
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-						.addComponent(comboBoxYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(buttonCreerSeance)
-						.addComponent(label1)
 						.addComponent(buttonExporter)
 						.addComponent(buttonSave)
-						.addComponent(buttonQuitter))
+						.addComponent(buttonQuitter)
+						.addComponent(comboBoxYear, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(label1))
 					.addGap(48, 48, 48))
 		);
 
@@ -236,7 +225,6 @@ public class GraphicPlanning extends JPanel {
 	// //GEN-BEGIN:variables
 	private JScrollPane scrollPane1;
 	private JTable table1;
-	private JButton buttonCreerSeance;
 	private JButton buttonExporter;
 	private JButton buttonSave;
 	private JButton buttonQuitter;

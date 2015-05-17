@@ -79,7 +79,7 @@ public class GeneratePlanningListener implements ItemListener {
 					Object obj = table.getValueAt(table.getSelectedRow(), table.getSelectedColumn());
 					if(obj != null && obj instanceof Seance && !deleted) {
 						SimpleDbConnector.delete((Seance)obj);
-						JOptionPane.showMessageDialog(panel, "La séance " + obj + " est supprimée.");
+						JOptionPane.showMessageDialog(panel, "La seance " + obj + " est supprimee.");
 						deleted = true;
 						refresh();
 					} 

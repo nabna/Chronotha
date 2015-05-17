@@ -42,8 +42,8 @@ public class GraphicSeance extends JPanel {
 		this.idPlanningSelected = idPlanningSelected;
 	}
 
-	public JTextField getTextDebut() {
-		return textDebut;
+	public JComboBox getComboBoxDebut() {
+		return comboBoxDebut;
 	}
 
 	public JTextField getTextDuree() {
@@ -92,7 +92,7 @@ public class GraphicSeance extends JPanel {
 		label7 = new JLabel();
 		comboBoxPlanning = new JComboBox();
 		label8 = new JLabel();
-		textDebut = new JTextField();
+		comboBoxDebut = new JComboBox();
 
 		//======== this ========
 
@@ -141,7 +141,7 @@ public class GraphicSeance extends JPanel {
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
 						.addGroup(layout.createSequentialGroup()
 							.addComponent(buttonSauvegarder)
-							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
 							.addComponent(buttonQuitter))
 						.addGroup(layout.createSequentialGroup()
 							.addGroup(layout.createParallelGroup()
@@ -164,10 +164,10 @@ public class GraphicSeance extends JPanel {
 								.addComponent(label3, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)
 								.addComponent(label4, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE))
 							.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-							.addGroup(layout.createParallelGroup()
-								.addComponent(textDebut, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textDuree, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textRang, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)))
+							.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+								.addComponent(textDuree, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+								.addComponent(textRang, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+								.addComponent(comboBoxDebut, GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)))
 						.addComponent(label6, GroupLayout.PREFERRED_SIZE, 317, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(49, Short.MAX_VALUE))
 		);
@@ -193,7 +193,7 @@ public class GraphicSeance extends JPanel {
 					.addGap(29, 29, 29)
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(label8)
-						.addComponent(textDebut, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(comboBoxDebut, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(label3)
@@ -206,7 +206,7 @@ public class GraphicSeance extends JPanel {
 					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(buttonSauvegarder)
 						.addComponent(buttonQuitter))
-					.addGap(50, 50, 50))
+					.addGap(45, 45, 45))
 		);
 		// //GEN-END:initComponents
 	}
@@ -228,6 +228,6 @@ public class GraphicSeance extends JPanel {
 	private JLabel label7;
 	private JComboBox comboBoxPlanning;
 	private JLabel label8;
-	private JTextField textDebut;
+	private JComboBox comboBoxDebut;
 	// JFormDesigner - End of variables declaration //GEN-END:variables
 }

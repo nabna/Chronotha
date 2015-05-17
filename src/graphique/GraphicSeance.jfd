@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:37:p, par l:::p {seq l {comp buttonSauvegarder:::p::p, space :::x, comp buttonQuitter:::p::p}, seq l {par l {seq l {comp label7:::::x, space :::p, comp label2:::::x}, comp label5::l:::x, seq l {comp label1:::p:100:p, space :0:0:x}}, space :::p, par l:::p {comp comboBoxFormateur::::268:x, comp comboBoxModule:::::x, comp comboBoxPlanning::l::268:x}}, seq t {par t {comp label8:::p:112:p, comp label3:::p:112:p, comp label4::t:p:112:p}, space :::p, par l {comp textDebut:::p:268:p, comp textDuree:::p:268:p, comp textRang:::p:268:p}}, comp label6::l:p:317:p}, space ::49:x}}"
-			"$verticalGroup": "par l {seq t {space :::x, comp label6:::p::p, space s:::p, par b {comp comboBoxModule::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp comboBoxFormateur::b:p::p, comp label1::b:p::p}, space :20:20:p, par l {comp comboBoxPlanning:::p::p, comp label7:::p::p}, space :::p, comp label2:::p::p, space :p:29:p, par b {comp label8::b:p::p, comp textDebut::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp textDuree::b:p::p}, space :p:14:p, par b {comp textRang::b:p::p, comp label4::b:p::p}, space s:::p, par b {comp buttonSauvegarder::b:p::p, comp buttonQuitter::b:p::p}, space :p:50:p}}"
+			"$horizontalGroup": "par l {seq l {space :p:37:p, par l:::p {seq l {comp buttonSauvegarder:::p::p, space ::222:x, comp buttonQuitter:::p::p}, seq l {par l {seq l {comp label7:::::x, space :::p, comp label2:::::x}, comp label5::l:::x, seq l {comp label1:::p:100:p, space :0:0:x}}, space :::p, par l:::p {comp comboBoxFormateur::::268:x, comp comboBoxModule:::::x, comp comboBoxPlanning::l::268:x}}, seq t {par t {comp label8:::p:112:p, comp label3:::p:112:p, comp label4::t:p:112:p}, space :::p, par l:::p {comp textDuree::::268:x, comp textRang::::268:x, comp comboBoxDebut::l::268:x}}, comp label6::l:p:317:p}, space ::49:x}}"
+			"$verticalGroup": "par l {seq t {space :::x, comp label6:::p::p, space s:::p, par b {comp comboBoxModule::b:p::p, comp label5::b:p::p}, space s:::p, par b {comp comboBoxFormateur::b:p::p, comp label1::b:p::p}, space :20:20:p, par l {comp comboBoxPlanning:::p::p, comp label7:::p::p}, space :::p, comp label2:::p::p, space :p:29:p, par b {comp label8::b:p::p, comp comboBoxDebut::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp textDuree::b:p::p}, space :p:14:p, par b {comp textRang::b:p::p, comp label4::b:p::p}, space s:::p, par b {comp buttonSauvegarder::b:p::p, comp buttonQuitter::b:p::p}, space :p:45:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -13,7 +13,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
-				"text": "Durée"
+				"text": "Duree"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
@@ -42,7 +42,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label6"
-				"text": "Gestionnaire de Séance"
+				"text": "Gestionnaire de Seance"
 				"font": new java.awt.Font( "Tahoma", 1, 20 )
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
@@ -61,10 +61,10 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label8"
-				"text": "Début"
+				"text": "Debut"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textDebut"
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "comboBoxDebut"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
