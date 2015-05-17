@@ -1,24 +1,17 @@
 package container;
 
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
-public class EasyBean {
+import common.DbObject;
 
-	private int id;
+@XmlRootElement
+public class EasyBean extends DbObject {
+
+	private static final long serialVersionUID = 1L;
+	
 	private String name;
 	private String value;
-
-	public int getId() {
-		return id;
-	}
-
-	@XmlAttribute
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -48,7 +41,6 @@ public class EasyBean {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((value == null) ? 0 : value.hashCode());
 		return result;
@@ -63,8 +55,6 @@ public class EasyBean {
 		if (getClass() != obj.getClass())
 			return false;
 		EasyBean other = (EasyBean) obj;
-		if (id != other.id)
-			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -77,6 +67,6 @@ public class EasyBean {
 			return false;
 		return true;
 	}
-	
+
 
 }

@@ -20,6 +20,9 @@ PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
 		<mapping resource="Formateur.hbm.xml"/>
 		<mapping resource="Seance.hbm.xml"/>
 		<mapping resource="Planning.hbm.xml"/>
+		
+		<!-- Test unitaire -->
+		<mapping resource="EasyBean.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
