@@ -39,8 +39,7 @@ public class GeneratePlanningListener implements ItemListener {
 		}
 	}
 	private void populateTable(JTable table, Date date) {
-		List<Planning> plannings = PlanningGenerator
-				.getWorkingDays(date, EMPTY);
+		List<Planning> plannings = PlanningGenerator.getWorkingDays(date);
 
 		Vector<String> columnNames = new Vector<String>();
 		columnNames.add("Date");
@@ -57,7 +56,7 @@ public class GeneratePlanningListener implements ItemListener {
 		TableModel model = new DefaultTableModel(columnNames, 600);
 		int i = 0;
 		for (Planning planning : plannings) {
-			model.setValueAt(planning.getIdentity(), i++, 0);
+			model.setValueAt(planning.getFormattedDate(), i++, 0);
 		}
 		table.setModel(model);
 	}
