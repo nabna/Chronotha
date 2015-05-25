@@ -1,6 +1,5 @@
 package graphique.listener;
 
-import static org.apache.commons.lang3.StringUtils.EMPTY;
 import graphique.GraphicPlanning;
 
 import java.awt.event.ItemEvent;

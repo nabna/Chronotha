@@ -544,7 +544,7 @@
             <module abbreviation="BDD">
                 <id>2</id>
                 <color>33ff33</color>
-                <name>Base de donnees</name>
+                <name>Base de données</name>
                 <nbSeance>40</nbSeance>
             </module>
             <planning>
@@ -566,6 +566,54 @@
         <formattedDate>04/09/2014</formattedDate>
         <availability>0</availability>
         <date>2014-09-04T00:00:00+02:00</date>
+        <seances>
+            <id>17</id>
+            <debut>3</debut>
+            <duree>7</duree>
+            <formateur>
+                <id>23</id>
+                <email>vincentvuong@yahoo.fr</email>
+                <nom>VUONG</nom>
+                <prenom>Vincent</prenom>
+                <titre>BDD</titre>
+            </formateur>
+            <module abbreviation="MO">
+                <id>5</id>
+                <color>ff</color>
+                <name>Musique Orientale</name>
+                <nbSeance>40</nbSeance>
+            </module>
+            <planning>
+                <id>3</id>
+                <availability>0</availability>
+                <date>2014-09-04T00:00:00+02:00</date>
+            </planning>
+            <rang>1</rang>
+        </seances>
+        <seances>
+            <id>21</id>
+            <debut>1</debut>
+            <duree>5</duree>
+            <formateur>
+                <id>2</id>
+                <email>abr@gmail.com</email>
+                <nom>BRILLIARD</nom>
+                <prenom>Anne</prenom>
+                <titre>Gestion</titre>
+            </formateur>
+            <module abbreviation="TA">
+                <id>0</id>
+                <color>FF0000</color>
+                <name>Tarab andalousie </name>
+                <nbSeance>40</nbSeance>
+            </module>
+            <planning>
+                <id>3</id>
+                <availability>0</availability>
+                <date>2014-09-04T00:00:00+02:00</date>
+            </planning>
+            <rang>1</rang>
+        </seances>
     </workingDays>
     <workingDays>
         <id>4</id>
@@ -578,6 +626,30 @@
         <formattedDate>08/09/2014</formattedDate>
         <availability>0</availability>
         <date>2014-09-08T00:00:00+02:00</date>
+        <seances>
+            <id>20</id>
+            <debut>1</debut>
+            <duree>3</duree>
+            <formateur>
+                <id>0</id>
+                <email>nabaouiae@yahoo.fr</email>
+                <nom>elha</nom>
+                <prenom>naba</prenom>
+                <titre>Gestion</titre>
+            </formateur>
+            <module abbreviation="BDD">
+                <id>2</id>
+                <color>33ff33</color>
+                <name>Base de données</name>
+                <nbSeance>40</nbSeance>
+            </module>
+            <planning>
+                <id>5</id>
+                <availability>0</availability>
+                <date>2014-09-08T00:00:00+02:00</date>
+            </planning>
+            <rang>1</rang>
+        </seances>
     </workingDays>
     <workingDays>
         <id>1262</id>
@@ -805,6 +877,30 @@
         <formattedDate>24/10/2014</formattedDate>
         <availability>0</availability>
         <date>2014-10-24T00:00:00+02:00</date>
+        <seances>
+            <id>22</id>
+            <debut>1</debut>
+            <duree>3</duree>
+            <formateur>
+                <id>2</id>
+                <email>abr@gmail.com</email>
+                <nom>BRILLIARD</nom>
+                <prenom>Anne</prenom>
+                <titre>Gestion</titre>
+            </formateur>
+            <module abbreviation="TA">
+                <id>0</id>
+                <color>FF0000</color>
+                <name>Tarab andalousie </name>
+                <nbSeance>40</nbSeance>
+            </module>
+            <planning>
+                <id>39</id>
+                <availability>0</availability>
+                <date>2014-10-24T00:00:00+02:00</date>
+            </planning>
+            <rang>1</rang>
+        </seances>
     </workingDays>
     <workingDays>
         <id>40</id>
@@ -1119,7 +1215,7 @@
             <module abbreviation="BDD">
                 <id>2</id>
                 <color>33ff33</color>
-                <name>Base de donnees</name>
+                <name>Base de données</name>
                 <nbSeance>40</nbSeance>
             </module>
             <planning>

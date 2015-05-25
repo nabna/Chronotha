@@ -1,5 +1,6 @@
 package container;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -9,9 +10,13 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
-public class Formation {
+import common.IDbObject;
 
+@XmlRootElement
+public class Formation implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
 	private int year;
 	private List<Planning> workingDays = new ArrayList<Planning>();
 	private List<Planning> holidays = new ArrayList<Planning>();
